@@ -1,198 +1,253 @@
-/* charity: water Brand Colors & Fonts
+@import url('https://fonts.googleapis.com/css2?family=Avenir&family=Proxima+Nova&display=swap');
 
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
-*/
-
-/* 
-  Charity: Water Landing Page Styles
-  This CSS uses the provided color palette and beginner-friendly styles.
-*/
-
-/* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #222;
+  font-family: 'Proxima Nova', 'Avenir', sans-serif;
+  background-color: #fef6e4;
+  color: #003366;
 }
 
-/* Add a slight shadow and rounded corners to each section for depth */
-section {
-  background: #fff; /* White background for sections */
-  border-radius: 12px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
-  margin: 24px 10px; /* Space between sections */
-  padding: 24px 16px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  flex-wrap: wrap;
 }
 
-/* Hero Section Styles */
-.hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
-  border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
-}
-
-/* Make the headline bold and modern */
-.hero h1 {
-  font-size: 2.5em;
+.logo {
   font-weight: bold;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Soft shadow for readability */
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
 }
 
-/* Style the subheadline */
-.hero p {
-  font-size: 1.2em;
-  margin-top: 0;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.12);
-}
-
-/* Story Section Styles */
-.story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Add accent color to section headings */
-h2 {
-  color: #2E9DF7; /* Primary blue */
-  margin-top: 0;
-  font-weight: bold;
-}
-
-/* Call-to-Action Section Styles */
-.call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
-  text-align: center;
-  padding: 30px 20px;
-}
-
-/* Style the impact story image */
-.impact-image {
+nav {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
-  max-width: 320px;
-  border-radius: 10px;
-  margin-bottom: 16px;
-  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.10);
+  margin-top: 1rem;
 }
 
-/* Donate Button Styles */
-.donate-button {
-  display: inline-block;
-  background-color: #4FCB53; /* Green */
-  color: #fff;
-  padding: 14px 32px;
+nav.show {
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-top: 18px;
-  box-shadow: 0 2px 8px rgba(79, 203, 83, 0.10);
-  transition: background 0.3s, transform 0.2s;
+  color: #003366;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Add nav hover effect */
+nav a:hover {
+  color: #1e3a8a;         /* Darker color */
+  transform: scale(1.1);  /* Slight enlargement */
+}
+
+.nav-toggle {
+  font-size: 1.5rem;
+  background: none;
   border: none;
   cursor: pointer;
 }
 
-/* Change button color when hovered */
-.donate-button:hover {
-  background-color: #159A48; /* Dark Green */
-  transform: translateY(-2px) scale(1.04); /* Slight lift */
+.hero {
+  background-color: #FFC907;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
-/* Add some spacing between sections */
-section {
-  margin-bottom: 20px;
+.hero h1,
+.hero h2 {
+  font-family: 'Avenir', 'Proxima Nova', sans-serif;
 }
 
-/* 
-  Media Queries for Responsive Design
-  Media queries help make your website look good on different screen sizes,
-  like phones (small screens) and computers (large screens).
-*/
+.hero h1 {
+  font-size: 10rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 3.5rem;
+}
 
-/* This media query applies styles when the screen is 600px wide or less (like on most phones) */
+.hero h2 {
+  font-size: 2rem;
+  color: #003366;
+  margin-bottom: 2rem;
+  font-weight: normal;
+}
+
+.hero p {
+  font-family: 'Avenir', sans-serif;
+  margin-bottom: 1.5rem;
+}
+
+/* Updated CTA Button */
+.cta-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #388E3C;
+  transform: scale(1.05);
+}
+
+.hero-img {
+  width: 100%;           /* Image fills the container width */
+  max-width: 1200px;     /* Increased from 900px to 1200px for a bigger image */
+  margin-top: 0;
+}
+
+.logo-img {
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+img, .hero-img, .logo-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Slideshow styles for beginners */
+.slideshow {
+  background: #fffbe7; /* Light background under the yellow hero */
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slide-img {
+  width: 100%;         /* Make images fill the container */
+  max-width: 800px;    /* Limit max size */
+  height: auto;        /* Keep image shape */
+  border-radius: 1rem; /* Rounded corners for a friendly look */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin: 0 auto;
+}
+
+/* Style for previous and next buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FFC907; /* Yellow background */
+  color: #003366;
+  border: none;
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: background 0.2s;
+  z-index: 1;
+}
+
+.prev:hover, .next:hover {
+  background-color: #FFD84D; /* Lighter yellow on hover */
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Responsive: stack slideshow images and buttons nicely on small screens */
 @media (max-width: 600px) {
-  /* Make hero section padding smaller on small screens */
-  .hero {
-    padding: 32px 8px;
-    font-size: 1em;
+  .slide-img {
+    max-width: 100%;
   }
-
-  /* Make headline font size smaller so it fits on small screens */
-  .hero h1 {
-    font-size: 1.4em;
-  }
-
-  /* Make subheadline font size smaller */
-  .hero p {
-    font-size: 1em;
-  }
-
-  /* Make story and call-to-action sections have less padding */
-  .story,
-  .call-to-action,
-  .donation-section {
-    padding: 14px 8px;
-  }
-
-  /* Make impact story image smaller and stack above the text */
-  .impact-content {
-    display: block; /* Stack items vertically */
-    text-align: center;
-  }
-
-  .impact-image {
-    width: 90%;    /* Make image take up most of the width */
-    max-width: 220px;
+  .prev, .next {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.7rem;
   }
 }
 
-/* This media query applies styles when the screen is wider than 600px (like on tablets and computers) */
-@media (min-width: 601px) {
-  /* Show image and text side by side in the impact story */
-  .impact-content {
-    display: flex;           /* Place items in a row */
-    align-items: center;     /* Vertically center items */
-    justify-content: center; /* Center the whole group */
-    gap: 28px;               /* Space between image and text */
-    text-align: left;
-    max-width: 800px;
-    margin: 0 auto;
+@media (min-width: 600px) {
+  body {
+    font-size: 1.1rem;
   }
 
-  .impact-image {
-    width: 300px;
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    padding: 3rem;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 50%;
+  }
+
+  .hero-img {
+    max-width: 1200px;   /* Also increase for larger screens */
+    margin-top: 0;
+  }
+
+  header {
+    padding: 2rem 3rem;
+  }
+
+  nav {
+    flex-direction: row;
+    gap: 2rem;
+    width: auto;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  nav {
+    display: flex !important;
+    flex-direction: row;
+    gap: 2rem;
+    width: auto;
+    margin-top: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+    padding: 3rem;
+    align-items: center;
+  }
+
+  .hero-text {
+    max-width: 50%;
   }
 }

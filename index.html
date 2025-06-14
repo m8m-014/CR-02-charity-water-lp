@@ -1,47 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>charity: water</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Avenir&family=Proxima+Nova&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Proxima Nova', sans-serif;
+      background-color: #fef6e4;
+      color: #102a43;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo-img {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 0.5rem;
+    }
+
+    nav {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    nav.show {
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #003366;
+      font-weight: 500;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #1e3a8a;
+      transform: scale(1.1);
+    }
+
+    .nav-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      background-color: #f4c542;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #1e3a8a;
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      background-color: #159A48;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 1.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      color: white;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #12863f;
+      transform: scale(1.05);
+    }
+
+    .hero-img {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 1rem;
+      height: auto;
+    }
+
+    /* Slideshow styles */
+    .slideshow {
+      position: relative;
+      max-width: 100%;
+      margin: 2rem auto;
+      overflow: hidden;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .slide-img {
+      width: 100%;
+      display: none;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        flex-direction: row;
+        gap: 2rem;
+        width: auto;
+        margin-top: 0;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+        padding: 3rem;
+      }
+
+      .hero-text {
+        max-width: 50%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <header>
+    <div class="logo">
+      <img src="img/water-can-transparent.png" alt="Water can logo" class="logo-img">
+      charity: water
+    </div>
+    <button class="nav-toggle" onclick="toggleNav()">&#9776;</button>
+    <nav id="navbar">
+      <a href="#">About us</a>
+      <a href="#">Photos</a>
+      <a href="#">Leadership Opportunities</a>
+    </nav>
+  </header>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Your Small Donation Deserves Big Transparency</h1>
+      <h2>Every dollar funds clean water — and we show you the proof.</h2>
+      <a href="#donate" class="cta-button">Let’s Help Transform Lives Today!</a>
+    </div>
+    <img src="img/Zimbabwe_2022_CG-9389.jpg" alt="Drilling well" class="hero-img">
+  </section>
 
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
+  <!-- Slideshow section starts here -->
+  <section class="slideshow">
+    <!-- Slideshow container -->
+    <div class="slideshow-container">
+      <!-- Each image is a slide -->
+      <img src="img/Malawi_2023_CG-9080.jpg" class="slide-img" alt="Malawi project photo" style="display: block;">
+      <img src="img/Nepal_2022_CG-8334.jpg" class="slide-img" alt="Nepal project photo" style="display: none;">
+      <img src="img/SierraLeone_2023_CG-3354.jpg" class="slide-img" alt="Sierra Leone project photo" style="display: none;">
+      <!-- Previous and Next buttons -->
+      <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+      <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+  </section>
+  <!-- Slideshow section ends here -->
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+  <script>
+    function toggleNav() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('show');
+    }
+
+    // Simple slideshow logic for beginners
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName('slide-img');
+
+    function showSlide(index) {
+      // Hide all slides
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+      }
+      // Show the selected slide
+      slides[index].style.display = 'block';
+    }
+
+    function changeSlide(n) {
+      slideIndex += n;
+      if (slideIndex < 0) {
+        slideIndex = slides.length - 1;
+      }
+      if (slideIndex >= slides.length) {
+        slideIndex = 0;
+      }
+      showSlide(slideIndex);
+    }
+
+    // Show the first slide when the page loads
+    showSlide(slideIndex);
+  </script>
 </body>
 </html>
